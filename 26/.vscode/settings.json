@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.twig": "php",
+        "iostream": "cpp",
+        "numbers": "cpp",
+        "random": "cpp",
+        "ostream": "cpp",
+        "new": "cpp",
+        "string": "cpp",
+        "string_view": "cpp"
+    }
+}

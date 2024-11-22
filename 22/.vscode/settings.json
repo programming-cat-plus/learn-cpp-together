@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.twig": "php",
+        "random": "cpp",
+        "limits": "cpp",
+        "initializer_list": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}

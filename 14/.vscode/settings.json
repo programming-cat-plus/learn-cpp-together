@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.twig": "php",
+        "new": "cpp",
+        "iostream": "cpp"
+    }
+}
