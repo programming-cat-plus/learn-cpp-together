@@ -22,6 +22,13 @@ public:
         cin>>width;
         cout<<"请输入长方形的高:";
         cin>>height;
+        if(cin.fail()||width<=0||height<=0)
+        {
+            cout<<"输入错误\n";
+            cin.clear();
+            cin.ignore();
+            return nullptr;
+        }
         return new Rectangle(width,height);
     };
 };
@@ -35,6 +42,13 @@ public:
         float radius;
         cout<<"请输入半径"<<endl;
         cin>>radius;
+        if(cin.fail()||radius<=0)
+        {
+            cout<<"输入错误\n";
+            cin.clear();
+            cin.ignore();
+            return nullptr;
+        }
         return new Circle(radius);
     };
 };

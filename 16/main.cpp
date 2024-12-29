@@ -23,8 +23,17 @@ int main(void)
         cout<<i<<": 退出"<<endl;
 
         int idx = 0;
+        
         cin>>idx;
 
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout<<"输入错误！\n";
+            continue;
+        }
+        
         if(idx==generator.size())
             break;
 
@@ -35,10 +44,12 @@ int main(void)
         }
 
         Shape* pShape = generator[idx]->generateShapeFromInput();
-        cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"<<endl;
-        cout<<"\t面积="<<pShape->area()<<",";
-        cout<<"周长="<<pShape->perimeter()<<endl;
-        cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n"<<endl;
-
+        if(pShape)
+        {
+            cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"<<endl;
+            cout<<"\t面积="<<pShape->area()<<",";
+            cout<<"周长="<<pShape->perimeter()<<endl;
+            cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n"<<endl;
+        }
     }
 }
