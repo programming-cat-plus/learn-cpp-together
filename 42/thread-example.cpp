@@ -32,7 +32,7 @@ int main(void)
     std::thread thread2(f,a,b);
 
     MyClass obj;
-    std::thread thread3(MyClass::sum,&obj,a,b);
+    std::thread thread3(&MyClass::sum,&obj,a,b);
 
     double result2;
     std::thread thread4([&result2](double a,double b){result2=a+b;},a,b);

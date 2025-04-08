@@ -28,8 +28,8 @@ public:
     std::this_thread::sleep_for(std::chrono::milliseconds(rgen2()));//模拟处理数据消耗的时间
   }
 
-  void printBuffer(){
-    std::osyncstream out(std::cout);
+  void printBuffer(std::osyncstream& out){
+    //std::osyncstream out(std::cout);
     out << "BUFFER: |";
     for (auto c : buff)
       out << c << "|";
@@ -46,8 +46,9 @@ public:
       
       buff[i % buff.size()] = ch;
 
-      std::osyncstream(std::cout) << "写线程: 写入字符 '"<< ch << "'.\t\t";
-      printBuffer();
+      std::osyncstream out(std::cout) ;
+      out << "写线程: 写入字符 '"<< ch << "'.\t\t";
+      printBuffer(out);
 
       // Signal that there is content to read
       sem_reader.release();
@@ -66,8 +67,9 @@ public:
       processData(ch); 
       buff[idx] = ' ';
 
-      std::osyncstream(std::cout) << "读线程: 读取数据 '" << ch << "'.\t\t";
-      printBuffer();
+      std::osyncstream out(std::cout);
+      out << "读线程: 读取数据 '" << ch << "'.\t\t";
+      printBuffer(out);
       sem_writer.release();
     }
   }

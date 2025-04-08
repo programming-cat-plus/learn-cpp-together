@@ -50,6 +50,13 @@ int main(void)
             cout<<"\t面积="<<pShape->area()<<",";
             cout<<"周长="<<pShape->perimeter()<<endl;
             cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n"<<endl;
-        }
+            delete pShape;
+        }        
     }
+
+    for(auto it:generator)
+    {
+        delete it;
+    }
+    return 0;
 }
