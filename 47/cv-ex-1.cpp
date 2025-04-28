@@ -52,8 +52,8 @@ private:
 int main()
 {
   Channel channel;
-  std::thread write_th(Channel::setData, &channel);
-  std::thread read_th(Channel::getData, &channel);
+  std::thread write_th(&Channel::setData, &channel);
+  std::thread read_th(&Channel::getData, &channel);
 
   read_th.join();
   write_th.join();

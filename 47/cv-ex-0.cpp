@@ -56,5 +56,3 @@ int main()
   write_th.join();
 }
 
-while (!pred())
-    wait(lock);
