@@ -89,8 +89,8 @@ int main(int argc, const char *argv[])
 {
   // Create an empty buffer
   RWBuffer rwbuffer;
-  std::thread writer(RWBuffer<>::writeToBuffer, &rwbuffer, kNumIterations);
-  std::thread reader(RWBuffer<>::readFromBuffer, &rwbuffer, kNumIterations);
+  std::thread writer(&RWBuffer<>::writeToBuffer, &rwbuffer, kNumIterations);
+  std::thread reader(&RWBuffer<>::readFromBuffer, &rwbuffer, kNumIterations);
   writer.join();
   reader.join();
   return 0;

@@ -58,8 +58,8 @@ int main(void)
     DemoClass demo;
     const int N1 = 10000;
     const int N2 = 10001;
-    std::thread th1(DemoClass::calc, &demo, N1);
-    std::thread th2(DemoClass::calc, &demo, N2);
+    std::thread th1(&DemoClass::calc, &demo, N1);
+    std::thread th2(&DemoClass::calc, &demo, N2);
 
     th1.join();
     th2.join();
