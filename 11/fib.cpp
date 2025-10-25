@@ -12,11 +12,12 @@ using namespace std;
 
 unsigned int fib(unsigned int n);
 unsigned int fib2(unsigned int n);
+unsigned int fib3(unsigned int n);
 
 int main(void)
 {
     for(int i=0;i<50;i++)
-        cout<<"fib("<<i<<") = "<< fib(i) << endl;
+        cout<<"fib("<<i<<") = "<< fib3(i) << endl;
    
     return 0;
 }
@@ -57,7 +58,7 @@ unsigned int fib3(unsigned int n)
     int fn_2 = 1;
     int fn_1 = 1;
     int fn = 0;
-	for(int i=2;i<n;i++)
+	for(int i=2;i<=n;i++)
     {
         fn = fn_2 + fn_1;
         fn_1 = fn_2;
