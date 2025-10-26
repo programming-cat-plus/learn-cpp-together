@@ -5,7 +5,6 @@
 template<typename... Ts>
 float f(Ts ... args) {
     std::tuple<Ts...> t(args...);
-    std::tuple<int, float, double, std::string> t(arg0,arg1,arg2,arg3);
     if constexpr(sizeof...(args) > 0)
         std::cout<<std::get<0>(t)<<"\n";
     if constexpr(sizeof...(args) > 1)
